@@ -1,18 +1,26 @@
 <resources>
     <string name="app_name">Learning App</string>
     <!-- Home -->
-    <string name="home_title">Home</string>
+    <string name="home_first_paragraph">O universo de Rick and Morty é composto por uma série de criaturas bizarras e ambientes inóspitos.</string>
+    <string name="home_second_paragraph">Este app foi feito para que você possa conhecer tudo isso de uma maneira simples e divertida</string>
 
     <!-- Character Detail -->
-    <string name="character_detail_title">Character details</string>
+    <string name="character_detail_title">Character Detail</string>
     <string name="character_detail_name_label">Name</string>
     <string name="character_detail_status_label">Status</string>
     <string name="character_detail_species_label">Species</string>
-    <string name="character_detail_location_label">Location</string>
+    <string name="character_detail_origin_label">Origin</string>
 
     <!-- Common -->
     <string name="back_to_home">Voltar para o início</string>
     <string name="characters">Characters</string>
     <string name="locations">Locations</string>
     <string name="episodes">Episodes</string>
+
+
+    <!-- Character info -->
+    <string name="character_info_name">Rick Sanchez</string>
+    <string name="character_info_status">Alive</string>
+    <string name="character_info_species">Human</string>
+    <string name="character_info_origin">Earth</string>
 </resources>

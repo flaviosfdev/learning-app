@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/character_detail_location_label"
+        android:text="@string/character_detail_origin_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/character_detail_species" />
@@ -117,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/character_detail_location_label"
-        tools:text="Character location" />
+        tools:text="Character origin" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/character_detail_button"

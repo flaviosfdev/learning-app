@@ -13,9 +13,15 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.homeCharacterButton.setOnClickListener {
-            startActivity(Intent(this, CharacterDetailScreenActivity::class.java))
-        }
+        setup()
 
+    }
+
+    private fun setup() {
+        with(binding) {
+            homeCharacterButton.setOnClickListener {
+                startActivity(Intent(this@HomeActivity, CharacterDetailScreenActivity::class.java))
+            }
+        }
     }
 }
