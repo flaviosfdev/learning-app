@@ -4,7 +4,16 @@ class DB {
 
     companion object {
 
-        fun getCharacters() {}
+        fun getCharacters(): List<Character> {
+            return List<Character>(20) {
+                Character(
+                    id = "",
+                    name = "Rick",
+                    status = "Alive",
+                )
+            }
+        }
+
 
         fun getLocations() {}
 

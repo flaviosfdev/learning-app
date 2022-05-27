@@ -6,8 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".CharacterListActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/character_list_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/characters" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/characters_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_list_toolbar"
+        tools:listitem="@layout/item_row"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

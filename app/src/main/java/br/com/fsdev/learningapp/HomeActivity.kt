@@ -20,7 +20,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setup() {
         with(binding) {
             homeCharacterButton.setOnClickListener {
-                startActivity(Intent(this@HomeActivity, CharacterDetailScreenActivity::class.java))
+                startActivity(Intent(this@HomeActivity, CharacterListActivity::class.java))
             }
         }
     }
