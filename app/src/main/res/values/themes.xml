@@ -38,7 +38,8 @@
     </style>
 
     <style name="LearningAppTheme.Button.Large">
-        <item name="android:layout_height">64dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
     </style>
 
 </resources>
