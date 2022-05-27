@@ -14,6 +14,9 @@
         android:theme="@style/Theme.LearningApp"
         tools:targetApi="31">
         <activity
+            android:name=".CharacterListActivity"
+            android:exported="false" />
+        <activity
             android:name=".CharacterDetailScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
