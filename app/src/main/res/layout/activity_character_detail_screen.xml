@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CharacterDetailScreenActivity">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/character_detail_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/character_detail_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/character_detail_profile_image"
         android:layout_width="200dp"
@@ -14,22 +24,9 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_detail_toolbar"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
         app:srcCompat="@drawable/ic_rick_and_morty" />
-
-    <TextView
-        android:id="@+id/character_detail_title_label"
-        style="@style/LearningAppTheme.Font.Title.Large"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/character_detail_title"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_detail_profile_image" />
 
     <TextView
         android:id="@+id/character_detail_name_label"
@@ -37,11 +34,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/character_detail_name_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_detail_title_label" />
+        app:layout_constraintTop_toBottomOf="@id/character_detail_profile_image" />
 
     <TextView
         android:id="@+id/character_detail_name"
@@ -98,7 +95,7 @@
         tools:text="Character species" />
 
     <TextView
-        android:id="@+id/character_detail_location_label"
+        android:id="@+id/character_detail_origin_label"
         style="@style/LearningAppTheme.Font.Title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -110,13 +107,13 @@
         app:layout_constraintTop_toBottomOf="@id/character_detail_species" />
 
     <TextView
-        android:id="@+id/character_detail_location"
+        android:id="@+id/character_detail_origin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_detail_location_label"
+        app:layout_constraintTop_toBottomOf="@id/character_detail_origin_label"
         tools:text="Character origin" />
 
     <com.google.android.material.button.MaterialButton
