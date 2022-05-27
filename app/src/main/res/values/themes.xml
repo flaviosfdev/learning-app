@@ -12,15 +12,22 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:textAppearance">@style/LearningAppTheme.Font</item>
     </style>
 
-    <style name="LearningAppTheme" parent="Theme.LearningApp" />
+    <style name="LearningAppTheme"/>
 
     <style name="LearningAppTheme.Font">
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="LearningAppTheme.Font.Large">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="LearningAppTheme.Font.Title">
+        <item name="android:textColor">@color/black</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -30,15 +37,22 @@
 
     <style name="LearningAppTheme.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/primaryGreen</item>
         <item name="backgroundTint">@color/white</item>
         <item name="strokeWidth">1dp</item>
-        <item name="strokeColor">@color/black</item>
+        <item name="strokeColor">@color/primaryGreen</item>
         <item name="textAllCaps">false</item>
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.Rounded</item>
     </style>
 
     <style name="LearningAppTheme.Button.Large">
-        <item name="android:layout_height">64dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="LearningAppTheme.Button.Medium">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
     </style>
 
 </resources>
