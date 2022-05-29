@@ -1,4 +1,4 @@
-package br.com.fsdev.learningapp
+package br.com.fsdev.learningapp.ui
 
 import java.io.Serializable
 

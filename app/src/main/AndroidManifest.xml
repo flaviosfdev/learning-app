@@ -14,14 +14,14 @@
         android:theme="@style/Theme.LearningApp"
         tools:targetApi="31">
         <activity
-            android:name=".CharacterListActivity"
+            android:name=".ui.CharacterListActivity"
             android:exported="false" />
         <activity
-            android:name=".CharacterDetailScreenActivity"
+            android:name=".ui.CharacterDetailScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".ui.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

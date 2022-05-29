@@ -1,4 +1,4 @@
-package br.com.fsdev.learningapp
+package br.com.fsdev.learningapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -12,15 +12,16 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         setup()
-
     }
 
     private fun setup() {
         with(binding) {
+
+            setSupportActionBar(homeToolbar)
+
             homeCharacterButton.setOnClickListener {
-                startActivity(Intent(this@HomeActivity, CharacterListActivity::class.java))
+                startActivity(Intent(this.root.context, CharacterListActivity::class.java))
             }
         }
     }

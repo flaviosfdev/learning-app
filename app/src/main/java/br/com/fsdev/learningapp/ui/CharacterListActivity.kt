@@ -1,10 +1,11 @@
-package br.com.fsdev.learningapp
+package br.com.fsdev.learningapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.fsdev.learningapp.CharacterDetailScreenActivity.Companion.CHARACTER
+import br.com.fsdev.learningapp.ui.CharacterDetailScreenActivity.Companion.CHARACTER
 import br.com.fsdev.learningapp.databinding.ActivityCharacterListBinding
 
 class CharacterListActivity : AppCompatActivity() {
@@ -20,19 +21,33 @@ class CharacterListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setup()
-        setupData()
     }
 
     private fun setup() {
+        val divider = DividerItemDecoration(
+            this, DividerItemDecoration.VERTICAL
+        )
+
         binding.apply {
-            charactersRv.addItemDecoration(
-                DividerItemDecoration(
-                    this@CharacterListActivity,
-                    DividerItemDecoration.VERTICAL
-                )
-            )
+            charactersRv.addItemDecoration(divider)
             charactersRv.adapter = listAdapter
+
+            setSupportActionBar(characterListToolbar)
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
+
+        setupData()
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun onItemSelected(item: Character) {

@@ -1,8 +1,8 @@
-package br.com.fsdev.learningapp
+package br.com.fsdev.learningapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import br.com.fsdev.learningapp.ListAdapter.ViewHolder
+import br.com.fsdev.learningapp.ui.ListAdapter.ViewHolder
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fsdev.learningapp.databinding.ItemRowBinding
 
@@ -25,8 +25,8 @@ class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
 
         holder.binding.apply {
             val item = items[position]
-            title.text = item.name
-            description.text = item.status
+            itemRowTitle.text = item.name
+            itemRowDescription.text = item.status
             root.setOnClickListener { onClick?.invoke(item) }
         }
     }
