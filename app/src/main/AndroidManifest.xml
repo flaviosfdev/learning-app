@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="br.com.fsdev.learningapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,10 +16,10 @@
         android:theme="@style/Theme.LearningApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.CharacterListActivity"
+            android:name=".ui.list.CharacterListActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CharacterDetailScreenActivity"
+            android:name=".ui.detail.CharacterDetailScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
