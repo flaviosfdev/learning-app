@@ -1,15 +1,18 @@
-package br.com.fsdev.learningapp.ui
+package br.com.fsdev.learningapp.data
+
+import br.com.fsdev.learningapp.domain.Character
+import br.com.fsdev.learningapp.domain.CharacterStatus
 
 class DB {
 
     companion object {
 
         fun getCharacters(): List<Character> {
-            return List(size = 20) {
+            return List(size = 10) {
                 Character(
-                    id = "",
+                    id = 1,
                     name = "Rick",
-                    status = "Alive",
+                    status = CharacterStatus.toStatus("Dead"),
                     species = "Human",
                     origin = "Earth"
                 )

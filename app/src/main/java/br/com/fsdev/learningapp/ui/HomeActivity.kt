@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.fsdev.learningapp.databinding.ActivityHomeBinding
+import br.com.fsdev.learningapp.ui.list.CharacterListActivity
 
 class HomeActivity : AppCompatActivity() {
 

@@ -1,12 +1,15 @@
-package br.com.fsdev.learningapp.ui
+package br.com.fsdev.learningapp.ui.list
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.fsdev.learningapp.ui.CharacterDetailScreenActivity.Companion.CHARACTER
 import br.com.fsdev.learningapp.databinding.ActivityCharacterListBinding
+import br.com.fsdev.learningapp.domain.Character
+import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity
+import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity.Companion.CHARACTER
+import br.com.fsdev.learningapp.data.DB
 
 class CharacterListActivity : AppCompatActivity() {
 
@@ -41,7 +44,7 @@ class CharacterListActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true
@@ -51,13 +54,8 @@ class CharacterListActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(item: Character) {
-        val intent = Intent(
-            this,
-            CharacterDetailScreenActivity::class.java
-        )
-            .apply {
-                putExtra(CHARACTER, item)
-            }
+        val intent = Intent(this, CharacterDetailScreenActivity::class.java)
+        intent.putExtra(CHARACTER, item)
         startActivity(intent)
     }
 

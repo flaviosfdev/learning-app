@@ -1,11 +1,15 @@
-package br.com.fsdev.learningapp.ui
+package br.com.fsdev.learningapp.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import br.com.fsdev.learningapp.data.repository.CharacterService
 import br.com.fsdev.learningapp.databinding.ActivityCharacterDetailScreenBinding
+import br.com.fsdev.learningapp.domain.Character
 
 class CharacterDetailScreenActivity : AppCompatActivity() {
+
+    private val service by lazy { CharacterService() }
 
     private val binding by lazy {
         ActivityCharacterDetailScreenBinding.inflate(layoutInflater)
@@ -25,7 +29,7 @@ class CharacterDetailScreenActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true
@@ -38,10 +42,10 @@ class CharacterDetailScreenActivity : AppCompatActivity() {
         character?.let {
             val item = it as Character
             with(binding) {
-                characterDetailName.text = item.name.orEmpty()
-                characterDetailStatus.text = item.status.orEmpty()
-                characterDetailSpecies.text = item.species.orEmpty()
-                characterDetailOrigin.text = item.origin.orEmpty()
+                characterDetailName.text = item.name
+                characterDetailStatus.text = item.status.name
+                characterDetailSpecies.text = item.species
+                characterDetailOrigin.text = item.origin
             }
         }
     }
