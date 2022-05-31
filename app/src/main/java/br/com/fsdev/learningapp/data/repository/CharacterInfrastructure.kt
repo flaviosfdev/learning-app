@@ -4,6 +4,8 @@ import br.com.fsdev.learningapp.data.mappers.CharacterMapper
 import br.com.fsdev.learningapp.data.network.GatewayBuilder
 import br.com.fsdev.learningapp.domain.models.Character
 import br.com.fsdev.learningapp.domain.CharacterService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class CharacterInfrastructure : CharacterService {
 
@@ -12,14 +14,18 @@ class CharacterInfrastructure : CharacterService {
     }
 
     override suspend fun getCharacters(): List<Character> =
-        gateway
-            .getCharacters()
-            .results
-            .map(CharacterMapper::toDomain)
+        withContext(Dispatchers.IO) {
+            gateway
+                .getCharacters()
+                .results
+                .map(CharacterMapper::toDomain)
+        }
 
     override suspend fun getCharacter(id: Int): Character =
+        withContext(Dispatchers.IO) {
         gateway
             .getCharacter(id)
             .let(CharacterMapper::toDomain)
+        }
 
 }

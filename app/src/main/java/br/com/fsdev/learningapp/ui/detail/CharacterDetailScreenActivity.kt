@@ -3,6 +3,7 @@ package br.com.fsdev.learningapp.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
 import br.com.fsdev.learningapp.databinding.ActivityCharacterDetailScreenBinding
@@ -11,12 +12,11 @@ import kotlinx.coroutines.launch
 
 class CharacterDetailScreenActivity : AppCompatActivity() {
 
-    private val service by lazy { CharacterInfrastructure() }
-
     private val binding by lazy {
         ActivityCharacterDetailScreenBinding.inflate(layoutInflater)
     }
     private val characterId by lazy { intent?.extras?.getInt(CHARACTER_ID) }
+    private val viewModel by viewModels<DetailViewModel>(DetailViewModel.Factory::build)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +44,7 @@ class CharacterDetailScreenActivity : AppCompatActivity() {
         characterId?.let {
             var item: Character? = null
             lifecycleScope.launch {
-                service.getCharacter(it).also { item = it }
+                viewModel.getCharacter(it).also { item = it }
                 item?.let { item ->
                     with(binding) {
                         characterDetailName.text = item.name

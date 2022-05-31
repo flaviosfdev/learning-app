@@ -3,6 +3,7 @@ package br.com.fsdev.learningapp.ui.list
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -22,6 +23,7 @@ class CharacterListActivity : AppCompatActivity() {
             onClick = ::onItemSelected
         }
     }
+    private val viewModel by viewModels<ListViewModel>(ListViewModel.Factory::build)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +66,8 @@ class CharacterListActivity : AppCompatActivity() {
 
     private fun setupData() {
         lifecycleScope.launch {
-            listAdapter.addItems(service.getCharacters())
+            viewModel.getCharacters()
+                .let(listAdapter::addItems)
         }
     }
 }
