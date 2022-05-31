@@ -1,7 +1,7 @@
 package br.com.fsdev.learningapp.data
 
-import br.com.fsdev.learningapp.domain.Character
-import br.com.fsdev.learningapp.domain.CharacterStatus
+import br.com.fsdev.learningapp.domain.models.Character
+import br.com.fsdev.learningapp.domain.models.CharacterStatus
 
 class DB {
 
@@ -13,12 +13,10 @@ class DB {
                     id = 1,
                     name = "Rick",
                     status = CharacterStatus.toStatus("Dead"),
-                    species = "Human",
-                    origin = "Earth"
+                    species = "Human"
                 )
             }
         }
-
 
         fun getLocations() {}
 

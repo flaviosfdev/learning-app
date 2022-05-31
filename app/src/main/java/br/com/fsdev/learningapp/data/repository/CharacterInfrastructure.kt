@@ -2,21 +2,22 @@ package br.com.fsdev.learningapp.data.repository
 
 import br.com.fsdev.learningapp.data.mappers.CharacterMapper
 import br.com.fsdev.learningapp.data.network.GatewayBuilder
-import br.com.fsdev.learningapp.domain.Character
+import br.com.fsdev.learningapp.domain.models.Character
+import br.com.fsdev.learningapp.domain.CharacterService
 
-class CharacterService {
+class CharacterInfrastructure : CharacterService {
 
     private val gateway by lazy {
-        GatewayBuilder.build<CharacterGateway>()
+        GatewayBuilder.build<RickAndMortyGateway>()
     }
 
-    suspend fun getCharacters(): List<Character> =
+    override suspend fun getCharacters(): List<Character> =
         gateway
             .getCharacters()
             .results
             .map(CharacterMapper::toDomain)
 
-    suspend fun getCharacter(id: Int): Character =
+    override suspend fun getCharacter(id: Int): Character =
         gateway
             .getCharacter(id)
             .let(CharacterMapper::toDomain)
