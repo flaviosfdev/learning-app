@@ -3,7 +3,12 @@ package br.com.fsdev.learningapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
+import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
 import br.com.fsdev.learningapp.databinding.ActivityHomeBinding
+import br.com.fsdev.learningapp.domain.CharacterService
+import br.com.fsdev.learningapp.ui.list.CharacterListActivity
+import kotlinx.coroutines.launch
 
 class HomeActivity : AppCompatActivity() {
 
@@ -13,6 +18,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setup()
+
     }
 
     private fun setup() {

@@ -1,15 +1,21 @@
-package br.com.fsdev.learningapp.ui
+package br.com.fsdev.learningapp.ui.list
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.fsdev.learningapp.ui.CharacterDetailScreenActivity.Companion.CHARACTER
+import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
 import br.com.fsdev.learningapp.databinding.ActivityCharacterListBinding
+import br.com.fsdev.learningapp.domain.models.Character
+import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity
+import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity.Companion.CHARACTER_ID
+import kotlinx.coroutines.launch
 
 class CharacterListActivity : AppCompatActivity() {
 
+    private val service by lazy { CharacterInfrastructure() }
     private val binding by lazy { ActivityCharacterListBinding.inflate(layoutInflater) }
     private val listAdapter by lazy {
         ListAdapter().apply {
@@ -41,7 +47,7 @@ class CharacterListActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true
@@ -51,17 +57,14 @@ class CharacterListActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(item: Character) {
-        val intent = Intent(
-            this,
-            CharacterDetailScreenActivity::class.java
-        )
-            .apply {
-                putExtra(CHARACTER, item)
-            }
+        val intent = Intent(this, CharacterDetailScreenActivity::class.java)
+        intent.putExtra(CHARACTER_ID, item.id)
         startActivity(intent)
     }
 
     private fun setupData() {
-        listAdapter.addItems(DB.getCharacters())
+        lifecycleScope.launch {
+            listAdapter.addItems(service.getCharacters())
+        }
     }
 }

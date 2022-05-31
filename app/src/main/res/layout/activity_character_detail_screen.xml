@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.CharacterDetailScreenActivity">
+    tools:context=".ui.detail.CharacterDetailScreenActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -126,6 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:text="-"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/character_detail_origin_label"
                 tools:text="Character origin" />
