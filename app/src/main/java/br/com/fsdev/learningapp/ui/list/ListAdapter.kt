@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import br.com.fsdev.learningapp.ui.list.ListAdapter.ViewHolder
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fsdev.learningapp.databinding.ItemRowBinding
-import br.com.fsdev.learningapp.domain.Character
+import br.com.fsdev.learningapp.domain.models.Character
 
 class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
 
