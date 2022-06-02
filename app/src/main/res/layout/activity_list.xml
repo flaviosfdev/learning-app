@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.list.CharacterListActivity">
+    tools:context=".ui.list.ListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/character_list_toolbar_layout"
+        android:id="@+id/list_toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/character_list_toolbar"
+            android:id="@+id/list_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,14 +28,14 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/characters_rv"
+        android:id="@+id/list_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="true"
         android:paddingHorizontal="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_list_toolbar_layout"
+        app:layout_constraintTop_toBottomOf="@id/list_toolbar_layout"
         tools:listitem="@layout/item_row" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

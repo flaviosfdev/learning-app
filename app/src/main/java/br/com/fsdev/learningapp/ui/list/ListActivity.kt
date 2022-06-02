@@ -7,17 +7,15 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
-import br.com.fsdev.learningapp.databinding.ActivityCharacterListBinding
+import br.com.fsdev.learningapp.databinding.ActivityListBinding
 import br.com.fsdev.learningapp.domain.models.Character
 import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity
 import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity.Companion.CHARACTER_ID
 import kotlinx.coroutines.launch
 
-class CharacterListActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity() {
 
-    private val service by lazy { CharacterInfrastructure() }
-    private val binding by lazy { ActivityCharacterListBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityListBinding.inflate(layoutInflater) }
     private val listAdapter by lazy {
         ListAdapter().apply {
             onClick = ::onItemSelected
@@ -36,10 +34,10 @@ class CharacterListActivity : AppCompatActivity() {
             this, DividerItemDecoration.VERTICAL
         )
         binding.apply {
-            charactersRv.addItemDecoration(divider)
-            charactersRv.adapter = listAdapter
+            listRv.addItemDecoration(divider)
+            listRv.adapter = listAdapter
 
-            setSupportActionBar(characterListToolbar)
+            setSupportActionBar(listToolbar)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
         setupData()
