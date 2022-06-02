@@ -1,11 +1,10 @@
 package br.com.fsdev.learningapp.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
 import br.com.fsdev.learningapp.databinding.ActivityCharacterDetailScreenBinding
 import br.com.fsdev.learningapp.domain.models.Character
 import kotlinx.coroutines.launch

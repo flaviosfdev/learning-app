@@ -35,7 +35,6 @@ class CharacterListActivity : AppCompatActivity() {
         val divider = DividerItemDecoration(
             this, DividerItemDecoration.VERTICAL
         )
-
         binding.apply {
             charactersRv.addItemDecoration(divider)
             charactersRv.adapter = listAdapter
@@ -43,9 +42,7 @@ class CharacterListActivity : AppCompatActivity() {
             setSupportActionBar(characterListToolbar)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
-
         setupData()
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

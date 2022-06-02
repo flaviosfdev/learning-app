@@ -2,10 +2,10 @@ package br.com.fsdev.learningapp.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import br.com.fsdev.learningapp.ui.list.ListAdapter.ViewHolder
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fsdev.learningapp.databinding.ItemRowBinding
 import br.com.fsdev.learningapp.domain.models.Character
+import br.com.fsdev.learningapp.ui.list.ListAdapter.ViewHolder
 
 class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
 

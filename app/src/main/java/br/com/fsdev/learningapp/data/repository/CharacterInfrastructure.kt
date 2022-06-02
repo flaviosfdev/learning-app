@@ -23,9 +23,9 @@ class CharacterInfrastructure : CharacterService {
 
     override suspend fun getCharacter(id: Int): Character =
         withContext(Dispatchers.IO) {
-        gateway
-            .getCharacter(id)
-            .let(CharacterMapper::toDomain)
+            gateway
+                .getCharacter(id)
+                .let(CharacterMapper::toDomain)
         }
 
 }

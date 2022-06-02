@@ -7,4 +7,4 @@ data class Character(
     val name: String,
     val status: CharacterStatus,
     val species: String
-): Serializable
+) : Serializable

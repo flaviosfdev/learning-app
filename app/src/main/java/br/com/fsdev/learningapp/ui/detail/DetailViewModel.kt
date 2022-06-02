@@ -11,14 +11,13 @@ import kotlinx.coroutines.withContext
 
 class DetailViewModel(
     private val service: CharacterService
-) : ViewModel(){
+) : ViewModel() {
 
-    suspend fun getCharacter(id: Int): Character  =
+    suspend fun getCharacter(id: Int): Character =
         withContext(Dispatchers.Default) {
             delay(2000L) // REMOVE ME
             service.getCharacter(id)
         }
-
 
     object Factory {
         fun build() =

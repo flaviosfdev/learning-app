@@ -1,8 +1,8 @@
 package br.com.fsdev.learningapp.ui.home
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.fsdev.learningapp.databinding.ActivityHomeBinding
 import br.com.fsdev.learningapp.ui.list.CharacterListActivity
 
