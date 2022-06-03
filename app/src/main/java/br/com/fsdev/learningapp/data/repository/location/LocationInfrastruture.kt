@@ -1,7 +1,8 @@
-package br.com.fsdev.learningapp.data.repository
+package br.com.fsdev.learningapp.data.repository.location
 
 import br.com.fsdev.learningapp.data.mappers.LocationMapper
 import br.com.fsdev.learningapp.data.network.GatewayBuilder
+import br.com.fsdev.learningapp.data.repository.RickAndMortyGateway
 import br.com.fsdev.learningapp.domain.LocationService
 import br.com.fsdev.learningapp.domain.models.Location
 import kotlinx.coroutines.Dispatchers

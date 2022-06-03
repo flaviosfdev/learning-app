@@ -1,7 +1,9 @@
 package br.com.fsdev.learningapp.data.repository
 
-import br.com.fsdev.learningapp.data.repository.model.CharacterDto
-import br.com.fsdev.learningapp.data.repository.model.LocationDto
+import br.com.fsdev.learningapp.data.repository.character.CharacterResponse
+import br.com.fsdev.learningapp.data.repository.character.CharacterDto
+import br.com.fsdev.learningapp.data.repository.location.LocationResponse
+import br.com.fsdev.learningapp.data.repository.location.LocationDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 

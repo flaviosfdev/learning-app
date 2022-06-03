@@ -1,6 +1,6 @@
 package br.com.fsdev.learningapp.data.mappers
 
-import br.com.fsdev.learningapp.data.repository.model.LocationDto
+import br.com.fsdev.learningapp.data.repository.location.LocationDto
 import br.com.fsdev.learningapp.domain.models.Location
 
 object LocationMapper {

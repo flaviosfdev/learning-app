@@ -1,7 +1,8 @@
-package br.com.fsdev.learningapp.data.repository
+package br.com.fsdev.learningapp.data.repository.character
 
 import br.com.fsdev.learningapp.data.mappers.CharacterMapper
 import br.com.fsdev.learningapp.data.network.GatewayBuilder
+import br.com.fsdev.learningapp.data.repository.RickAndMortyGateway
 import br.com.fsdev.learningapp.domain.models.Character
 import br.com.fsdev.learningapp.domain.CharacterService
 import kotlinx.coroutines.Dispatchers
