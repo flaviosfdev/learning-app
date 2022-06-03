@@ -1,8 +1,8 @@
 package br.com.fsdev.learningapp.domain.models
 
-data class Character(
+data class Location(
     val id: Int,
     val name: String,
-    val status: CharacterStatus,
-    val species: String
+    val type: String,
+    val dimension: String
 )

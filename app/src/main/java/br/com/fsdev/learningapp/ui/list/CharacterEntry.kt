@@ -6,7 +6,7 @@ import br.com.fsdev.learningapp.databinding.ItemRowBinding
 import br.com.fsdev.learningapp.domain.models.Character
 import com.xwray.groupie.viewbinding.BindableItem
 
-class ListItemEntry(
+class CharacterEntry(
     val item: Character
 ): BindableItem<ItemRowBinding>() {
 

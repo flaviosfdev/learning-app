@@ -1,4 +1,4 @@
-package br.com.fsdev.learningapp.data.repository
+package br.com.fsdev.learningapp.data.repository.character
 
 import kotlinx.serialization.Serializable
 
