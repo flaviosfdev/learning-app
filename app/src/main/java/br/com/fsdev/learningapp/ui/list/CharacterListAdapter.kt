@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fsdev.learningapp.databinding.ItemRowBinding
 import br.com.fsdev.learningapp.domain.models.Character
-import br.com.fsdev.learningapp.ui.list.ListAdapter.ViewHolder
+import br.com.fsdev.learningapp.ui.list.CharacterListAdapter.ViewHolder
 
-class ListAdapter : RecyclerView.Adapter<ViewHolder>() {
+class CharacterListAdapter : RecyclerView.Adapter<ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemRowBinding) : RecyclerView.ViewHolder(binding.root)
 

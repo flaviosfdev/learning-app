@@ -15,9 +15,6 @@ class ListViewModel(
 
     suspend fun getCharacters(): List<Character> =
         withContext(Dispatchers.Default) {
-            // REMOVE ME
-            // REMOVE ME
-            // REMOVE ME
             delay(2000L)
             service.getCharacters()
         }
