@@ -2,14 +2,13 @@ package br.com.fsdev.learningapp.ui.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
-import br.com.fsdev.learningapp.data.repository.LocationInfrastruture
+import br.com.fsdev.learningapp.data.repository.character.CharacterInfrastructure
+import br.com.fsdev.learningapp.data.repository.location.LocationInfrastruture
 import br.com.fsdev.learningapp.domain.CharacterService
 import br.com.fsdev.learningapp.domain.LocationService
 import br.com.fsdev.learningapp.domain.models.Character
 import br.com.fsdev.learningapp.domain.models.Location
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
 class ListViewModel(

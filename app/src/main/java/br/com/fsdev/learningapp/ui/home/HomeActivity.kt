@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.fsdev.learningapp.databinding.ActivityHomeBinding
 import br.com.fsdev.learningapp.ui.list.ListActivity
+import br.com.fsdev.learningapp.ui.list.ListActivity.Companion.IS_CHARACTER
+import br.com.fsdev.learningapp.ui.list.ListActivity.Companion.IS_NOT_CHARACTER
+import br.com.fsdev.learningapp.ui.list.ListActivity.Companion.ITEMS
 
 class HomeActivity : AppCompatActivity() {
 
@@ -22,7 +25,18 @@ class HomeActivity : AppCompatActivity() {
             setSupportActionBar(homeToolbar)
 
             homeCharacterButton.setOnClickListener {
-                startActivity(Intent(this.root.context, ListActivity::class.java))
+                startActivity(
+                    Intent(this.root.context, ListActivity::class.java).apply {
+                        putExtra(ITEMS, IS_CHARACTER)
+                    }
+                )
+            }
+            homeLocationButton.setOnClickListener {
+                startActivity(
+                    Intent(this.root.context, ListActivity::class.java).apply {
+                        putExtra(ITEMS, IS_NOT_CHARACTER)
+                    }
+                )
             }
         }
     }
