@@ -23,7 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="@string/characters" />
+            tools:title="List Toolbar Title" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

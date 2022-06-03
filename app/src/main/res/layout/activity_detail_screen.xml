@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.detail.CharacterDetailScreenActivity">
+    tools:context=".ui.detail.DetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -13,11 +13,11 @@
         android:background="@color/white">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/character_detail_toolbar"
+            android:id="@+id/detail_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_arrow_back"
-            app:title="@string/character_detail_title" />
+            tools:title="Detail Toolbar Title" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,93 +43,92 @@
                 app:srcCompat="@drawable/ic_rick_and_morty" />
 
             <TextView
-                android:id="@+id/character_detail_name_label"
+                android:id="@+id/detail_name_label"
                 style="@style/LearningAppTheme.Font.Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/character_detail_name_label"
+                android:text="@string/detail_name_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/character_detail_profile_image" />
 
             <TextView
-                android:id="@+id/character_detail_name"
+                android:id="@+id/detail_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_name_label"
-                tools:text="Character name" />
+                app:layout_constraintTop_toBottomOf="@id/detail_name_label"
+                tools:text="Name value" />
 
             <TextView
-                android:id="@+id/character_detail_status_label"
+                android:id="@+id/detail_first_field_label"
                 style="@style/LearningAppTheme.Font.Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/character_detail_status_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_name" />
+                app:layout_constraintTop_toBottomOf="@id/detail_name"
+                tools:text="First field label" />
 
             <TextView
-                android:id="@+id/character_detail_status"
+                android:id="@+id/detail_first_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_status_label"
-                tools:text="Character status" />
+                app:layout_constraintTop_toBottomOf="@id/detail_first_field_label"
+                tools:text="First field value" />
 
             <TextView
-                android:id="@+id/character_detail_species_label"
+                android:id="@+id/detail_second_field_label"
                 style="@style/LearningAppTheme.Font.Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/character_detail_species_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_status" />
+                app:layout_constraintTop_toBottomOf="@id/detail_first_field"
+                tools:text="Second field label" />
 
             <TextView
-                android:id="@+id/character_detail_species"
+                android:id="@+id/detail_second_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_species_label"
-                tools:text="Character species" />
+                app:layout_constraintTop_toBottomOf="@id/detail_second_field_label"
+                tools:text="Second field value" />
 
             <TextView
-                android:id="@+id/character_detail_origin_label"
+                android:id="@+id/detail_third_field_label"
                 style="@style/LearningAppTheme.Font.Title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/character_detail_origin_label"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_species" />
+                app:layout_constraintTop_toBottomOf="@id/detail_second_field"
+                tools:text="Third field label" />
 
             <TextView
-                android:id="@+id/character_detail_origin"
+                android:id="@+id/detail_third_field"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:text="-"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/character_detail_origin_label"
-                tools:text="Character origin" />
+                app:layout_constraintTop_toBottomOf="@id/detail_third_field_label"
+                tools:text="Third field value" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

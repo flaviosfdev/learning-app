@@ -13,15 +13,15 @@
     <string name="home_second_paragraph">Este app foi feito para que você possa conhecer tudo isso de uma maneira simples e divertida</string>
 
     <!-- Character Detail -->
-    <string name="character_detail_title">Character Detail</string>
-    <string name="character_detail_name_label">Name</string>
-    <string name="character_detail_status_label">Status</string>
-    <string name="character_detail_species_label">Species</string>
-    <string name="character_detail_origin_label">Origin</string>
+    <string name="detail_name_label">Name</string>
 
-    <!-- Character info -->
-    <string name="character_info_name">Rick Sanchez</string>
-    <string name="character_info_status">Alive</string>
-    <string name="character_info_species">Human</string>
-    <string name="character_info_origin">Earth</string>
+    <string name="character_detail_title">Character Detail</string>
+    <string name="character_detail_first_field_label">Status</string>
+    <string name="character_detail_second_field_label">Species</string>
+    <string name="character_detail_third_field_label">Origin</string>
+
+    <string name="location_detail_title">Location Detail</string>
+    <string name="location_detail_first_field_label">Type</string>
+    <string name="location_detail_second_field_label">Dimension</string>
+
 </resources>
