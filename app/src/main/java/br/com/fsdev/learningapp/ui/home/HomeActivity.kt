@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.com.fsdev.learningapp.databinding.ActivityHomeBinding
-import br.com.fsdev.learningapp.ui.list.CharacterListActivity
+import br.com.fsdev.learningapp.ui.list.ListActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
             setSupportActionBar(homeToolbar)
 
             homeCharacterButton.setOnClickListener {
-                startActivity(Intent(this.root.context, CharacterListActivity::class.java))
+                startActivity(Intent(this.root.context, ListActivity::class.java))
             }
         }
     }

@@ -7,42 +7,48 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import br.com.fsdev.learningapp.data.repository.CharacterInfrastructure
-import br.com.fsdev.learningapp.databinding.ActivityCharacterListBinding
+import br.com.fsdev.learningapp.databinding.ActivityListBinding
 import br.com.fsdev.learningapp.domain.models.Character
 import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity
 import br.com.fsdev.learningapp.ui.detail.CharacterDetailScreenActivity.Companion.CHARACTER_ID
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.GroupieViewHolder
 import kotlinx.coroutines.launch
 
-class CharacterListActivity : AppCompatActivity() {
+class ListActivity : AppCompatActivity() {
 
-    private val service by lazy { CharacterInfrastructure() }
-    private val binding by lazy { ActivityCharacterListBinding.inflate(layoutInflater) }
-    private val listAdapter by lazy {
-        ListAdapter().apply {
+    private val binding by lazy { ActivityListBinding.inflate(layoutInflater) }
+    private val viewModel by viewModels<ListViewModel>(ListViewModel.Factory::build)
+
+    // adapter sem groupie
+    private val characterListAdapter by lazy {
+        CharacterListAdapter().apply {
             onClick = ::onItemSelected
         }
     }
-    private val viewModel by viewModels<ListViewModel>(ListViewModel.Factory::build)
+
+    // adapter groupie
+    private val adapter by lazy { GroupAdapter<GroupieViewHolder>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         setup()
+        setupDataCharacter()
     }
 
     private fun setup() {
         val divider = DividerItemDecoration(
             this, DividerItemDecoration.VERTICAL
         )
-        binding.apply {
-            charactersRv.addItemDecoration(divider)
-            charactersRv.adapter = listAdapter
 
-            setSupportActionBar(characterListToolbar)
+        binding.apply {
+            setSupportActionBar(listToolbar)
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+            listRv.addItemDecoration(divider)
+            listRv.adapter = adapter
         }
-        setupData()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -55,16 +61,29 @@ class CharacterListActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    private fun setupList(items: List<Character>) {
+        adapter.apply {
+            clear()
+            addAll(items.map { ListItemEntry(it) })
+
+            setOnItemClickListener { item, _ ->
+                val character = (item as ListItemEntry).item
+                onItemSelected(character)
+            }
+        }
+    }
+
+    private fun setupDataCharacter() {
+        lifecycleScope.launch {
+            setupList(viewModel.getCharacters())
+        }
+    }
+
     private fun onItemSelected(item: Character) {
         val intent = Intent(this, CharacterDetailScreenActivity::class.java)
         intent.putExtra(CHARACTER_ID, item.id)
         startActivity(intent)
     }
 
-    private fun setupData() {
-        lifecycleScope.launch {
-            viewModel.getCharacters()
-                .let(listAdapter::addItems)
-        }
-    }
+
 }
